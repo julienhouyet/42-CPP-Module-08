@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 10:05:11 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/07/18 10:17:42 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/07/18 10:25:13 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int main()
 
 		srand(time(nullptr));
 
-		sp.addNumber(rand() % 9999999999);
+		sp.addNumber(2);
 		sp.addNumber(3);
 		sp.addNumber(17);
 		sp.addNumber(9);

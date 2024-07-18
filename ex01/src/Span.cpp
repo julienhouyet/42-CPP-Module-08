@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 10:04:47 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/07/18 09:50:51 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/07/18 15:08:41 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,37 @@ void Span::addNumber(unsigned long number)
 
 int Span::shortestSpan(void) const
 {
-	return 0;
+	if (this->_array.size() < 2)
+	{
+		throw std::logic_error("Need more elements for found the shortest span");
+	}
+
+	int shortestSpan = INT_MAX;
+
+	std::vector<int> tempArray = this->_array;
+	std::sort(tempArray.begin(), tempArray.end());
+
+	for (size_t i = 1; i < tempArray.size(); ++i)
+	{
+		int span = tempArray[i] - tempArray[i - 1];
+		if (span < shortestSpan)
+		{
+			shortestSpan = span;
+		}
+	}
+
+	return shortestSpan;
 }
 
 int Span::longestSpan(void) const
 {
-	return 0;
+	if (this->_array.size() < 2)
+	{
+		throw std::logic_error("Need more elements for found the longest span");
+	}
+
+	int min = *std::min_element(this->_array.begin(), this->_array.end());
+	int max = *std::max_element(this->_array.begin(), this->_array.end());
+
+	return max - min;
 }
