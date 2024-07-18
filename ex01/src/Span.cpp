@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 10:04:47 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/07/17 09:58:28 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/07/18 09:50:51 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,20 +47,13 @@ Span::~Span(void)
 
 void Span::addNumber(unsigned long number)
 {
-	try
+	if (this->_array.size() < this->_n)
 	{
-		if (this->_array.size() < this->_n)
-		{
-			this->_array.push_back(number);
-		}
-		else
-		{
-			throw std::out_of_range("No more place in the array");
-		}
+		this->_array.push_back(number);
 	}
-	catch (const std::exception &e)
+	else
 	{
-		std::cerr << e.what() << '\n';
+		throw std::out_of_range("No more place in the array");
 	}
 }
 
