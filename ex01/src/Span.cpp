@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 10:04:47 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/07/18 15:08:41 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/07/18 17:16:25 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,16 @@ void Span::addNumber(unsigned long number)
 	{
 		throw std::out_of_range("No more place in the array");
 	}
+}
+
+void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+	size_t distance = std::distance(begin, end);
+	if (this->_array.size() + distance > this->_n)
+	{
+		throw std::out_of_range("No more place in the array");
+	}
+	this->_array.insert(this->_array.end(), begin, end);
 }
 
 int Span::shortestSpan(void) const
