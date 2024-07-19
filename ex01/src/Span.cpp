@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 10:04:47 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/07/18 17:16:25 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/07/19 07:40:11 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ Span::~Span(void)
 //                         Public Member Functions                            //
 // ************************************************************************** //
 
-void Span::addNumber(unsigned long number)
+void Span::addNumber(int number)
 {
 	if (this->_array.size() < this->_n)
 	{

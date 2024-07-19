@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 10:04:50 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/07/18 17:16:37 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/07/19 07:39:58 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	Span &operator=(const Span &copy);
 	~Span(void);
 
-	void addNumber(unsigned long number);
+	void addNumber(int number);
 	void addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 	int shortestSpan(void) const;
 	int longestSpan(void) const;
